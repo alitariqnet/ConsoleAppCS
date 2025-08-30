@@ -5,8 +5,10 @@
         static void Main(string[] args)
         {
             Console.WriteLine("Program starts...");
-            CollectionsPractice collectionsPractice = new CollectionsPractice();
-            collectionsPractice.DoPractice();
+            //CollectionsPractice collectionsPractice = new CollectionsPractice();
+            //collectionsPractice.DoPractice();
+            //ValueTypeExample.Maine();
+            NullableTypeExample.Maine();
         }
     }
 
