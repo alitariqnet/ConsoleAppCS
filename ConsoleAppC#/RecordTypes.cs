@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleAppC_
+namespace ConsoleAppCS
 {
-    internal class RefTypeExample
-    {
-    }
+    public readonly record struct DailyTemperature(double HighTemp, double LowTemp);
+
 }

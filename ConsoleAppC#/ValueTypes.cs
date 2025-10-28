@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleAppC_
+namespace ConsoleAppCS
 {
-    internal class ValueTypeExample
+    internal class ValueTypes
     {
         public struct MutablePoint
         {

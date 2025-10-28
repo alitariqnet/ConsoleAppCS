@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleAppC_
+namespace ConsoleAppCS
 {
-    internal class CollectionsPractice
+    internal class CollectionsCS
     {
         public void DoPractice()
         {

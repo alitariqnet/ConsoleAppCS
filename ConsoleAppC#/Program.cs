@@ -1,4 +1,4 @@
-﻿namespace ConsoleAppC_
+﻿namespace ConsoleAppCS
 {
     internal class Program
     {
@@ -8,7 +8,7 @@
             //CollectionsPractice collectionsPractice = new CollectionsPractice();
             //collectionsPractice.DoPractice();
             //ValueTypeExample.Maine();
-            NullableTypeExample.Maine();
+            NullableType.Maine();
         }
     }
 
