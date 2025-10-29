@@ -8,10 +8,10 @@ namespace ConsoleAppCS
 {
     internal class NullableType
     {
-        public static void Maine()
+        public static void Man()
         {
-            double? pi = 3.14;
-            char? letter = 'a';
+            //double? pi = 3.14;
+            //char? letter = 'a';
 
             int m2 = 10;
             int? m = m2;

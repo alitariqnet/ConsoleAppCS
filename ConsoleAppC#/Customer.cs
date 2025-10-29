@@ -9,9 +9,8 @@ namespace ConsoleAppCS
     public class Customer : User
 
     {
-        private static string role;
         Dictionary<DateOnly, Order> _orders = new Dictionary<DateOnly, Order>();
-        public Customer(string name, string email, string password) : base(name, email, password, role)
+        public Customer(string name, string email, string password) : base(name, email, password, "Customer")
         {
 
         }

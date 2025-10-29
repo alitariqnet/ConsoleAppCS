@@ -10,7 +10,7 @@ namespace ConsoleAppCS
     {
         public SomeQueues() { }
 
-        public static void Maine()
+        public static void Man()
         {
             Queue<string> queue = new();
             // Enqueue elements

@@ -9,7 +9,10 @@
             //collectionsPractice.DoPractice();
             //ValueTypeExample.Maine();
             //NullableType.Maine();
-            SomeQueues.Maine();
+            //SomeQueues.Maine();
+            //ConcurrentBagDemo.Man();
+            Example.Man();
+            Console.WriteLine("Program ends...");
         }
     }
 

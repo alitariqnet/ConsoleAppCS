@@ -8,10 +8,17 @@ namespace ConsoleAppCS
 {
     public class Admin : User
     {
-        private static string role;
-
-        public Admin(string name, string email, string password) : base(name, email, password, role)
+        public Admin() : this(string.Empty, string.Empty, string.Empty)
         {
+        }
+        public Admin(string name, string email, string password) : base(name, email, password, "Admin")
+        {
+            
+        }
+
+        public static Admin CreateAdmin(string name, string email, string password)
+        {
+            return new Admin(name, email, password);
         }
         public override void DisplayUserDetails()
         {
