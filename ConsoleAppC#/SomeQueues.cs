@@ -10,5 +10,29 @@ namespace ConsoleAppCS
     {
         public SomeQueues() { }
 
+        public static void Maine()
+        {
+            Queue<string> queue = new();
+            // Enqueue elements
+            queue.Enqueue("First");
+            queue.Enqueue("Second");
+            queue.Enqueue("Third");
+            Console.WriteLine("Queue contents after enqueuing:");
+            foreach (var item in queue)
+            {
+                Console.WriteLine(item);
+            }
+            // Dequeue elements
+            string dequeuedItem = queue.Dequeue();
+            Console.WriteLine($"\nDequeued item: {dequeuedItem}");
+            Console.WriteLine("\nQueue contents after dequeuing:");
+            foreach (var item in queue)
+            {
+                Console.WriteLine(item);
+            }
+            // Peek at the next item
+            string peekedItem = queue.Peek();
+            Console.WriteLine($"\nNext item to dequeue (peek): {peekedItem}");
+        }
     }
 }
