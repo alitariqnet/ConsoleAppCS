@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="entity\" />
+    <PackageReference Include="Humanizer" Version="3.0.1" />
   </ItemGroup>
 
 </Project>
