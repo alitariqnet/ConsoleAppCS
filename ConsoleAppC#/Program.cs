@@ -14,9 +14,10 @@ namespace ConsoleAppCS
             //SomeQueues.Maine();
             //ConcurrentBagDemo.Man();
             //Example.Man();
-            SealIt.RunSealedLogic();
+            //SealIt.RunSealedLogic();
             //HumanizeQuantities();
             //HumanizeDates();
+            StaticCharge.PrintClassName();
             Console.WriteLine("==============");
         }
 

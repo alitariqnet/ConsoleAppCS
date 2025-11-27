@@ -51,6 +51,10 @@ namespace ConsoleAppCS
         {
             var X = new X();
             X.RunFunX();
+            var Y = new Y();
+            Y.RunFunY();
+            var Z = new Z();
+            Z.RunFunZ();
         }
     }
 }
