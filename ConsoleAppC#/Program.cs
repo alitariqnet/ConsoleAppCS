@@ -17,7 +17,11 @@ namespace ConsoleAppCS
             //SealIt.RunSealedLogic();
             //HumanizeQuantities();
             //HumanizeDates();
-            StaticCharge.PrintClassName();
+            //StaticCharge.PrintClassName();
+            //Program2.Man();
+
+            LetsDelegate.RunDelegateExample();
+
             Console.WriteLine("==============");
         }
 
