@@ -23,6 +23,11 @@ namespace ConsoleAppCS
         {
             Console.WriteLine(name);
         }
+        public static int PrintStringLength(string str)
+        {
+            Console.WriteLine(str.Length);
+            return 0;
+        }
 
         public static void RunDelegateExample()
         {
@@ -32,5 +37,6 @@ namespace ConsoleAppCS
             NotifyCallback notifyCallback = new(Notify);
             notifyCallback("Notifying...");
         }
+
     }
 }
