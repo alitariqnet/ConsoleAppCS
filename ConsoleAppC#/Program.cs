@@ -1,4 +1,5 @@
 ﻿using Humanizer;
+using System.Net.Http.Headers;
 
 namespace ConsoleAppCS
 {
@@ -20,7 +21,13 @@ namespace ConsoleAppCS
             //StaticCharge.PrintClassName();
             //Program2.Man();
 
-            LetsDelegate.RunDelegateExample();
+            //LetsDelegate.RunDelegateExample();
+
+            //HttpRequest.MainAsync().GetAwaiter().GetResult();
+
+            //Variables.Run();
+
+            
 
             Console.WriteLine("==============");
         }
@@ -39,6 +46,36 @@ static void HumanizeDates()
     Console.WriteLine(TimeSpan.FromDays(1).Humanize());
     Console.WriteLine(TimeSpan.FromDays(16).Humanize());
 }
+
+        int multiplier(int x, int y)
+        {
+            return x * y;
+        }
+
+        int multiplier(int x, int y, int z)
+        {
+            return x * y * z;
+        }
+
+        static void switchTest()
+        {
+            int x = 1;
+            switch (x)
+            {
+                case 0:
+                    int y;
+                    break;
+                case var z when z < 10:
+                    break;
+                default:
+                    y = 10;
+                    // Valid: y is in scope
+                    Console.WriteLine(x + y);
+                    // Invalid: z is not scope
+                    //Console.WriteLine(x + z);
+                    break;
+            }
+        }
     }
 
 }
