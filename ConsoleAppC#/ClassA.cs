@@ -16,7 +16,7 @@ namespace ConsoleAppCS
 
         void F()
         {
-            int i = 0;
+            //int i = 0;
             if (true)
             {
                 //int i = 1;
@@ -29,18 +29,18 @@ namespace ConsoleAppCS
             {
                 //int i = 0;
             }
-            int i = 1;
+            //int i = 1;
         }
 
         void H()
         {
             if (true)
             {
-                int i = 0;
+                //int i = 0;
             }
             if (true)
             {
-                int i = 1;
+                //int i = 1;
             }
         }
 

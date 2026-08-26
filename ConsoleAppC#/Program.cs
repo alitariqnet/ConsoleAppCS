@@ -27,7 +27,9 @@ namespace ConsoleAppCS
 
             //Variables.Run();
 
-            
+            //Conversions.conversion();
+
+            Exceptions.exceptions();
 
             Console.WriteLine("==============");
         }
