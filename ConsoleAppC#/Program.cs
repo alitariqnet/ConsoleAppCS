@@ -35,7 +35,7 @@ namespace ConsoleAppCS
 
             //Enums.currentSeason();
 
-            FileOperations.TestFile();
+            FileOperations.StreamReaderTest();
 
             Console.WriteLine("==============");
         }
