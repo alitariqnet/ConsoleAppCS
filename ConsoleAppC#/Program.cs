@@ -29,7 +29,11 @@ namespace ConsoleAppCS
 
             //Conversions.conversion();
 
-            Exceptions.exceptions();
+            //Exceptions.exceptions();
+
+            //GoodMemory.test();
+
+            Enums.currentSeason();
 
             Console.WriteLine("==============");
         }
