@@ -33,7 +33,9 @@ namespace ConsoleAppCS
 
             //GoodMemory.test();
 
-            Enums.currentSeason();
+            //Enums.currentSeason();
+
+            FileOperations.TestFile();
 
             Console.WriteLine("==============");
         }

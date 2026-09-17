@@ -17,6 +17,7 @@ namespace ConsoleAppCS
 
             DaysOfWeek day = (DaysOfWeek)3;
             Console.WriteLine(day); // Outputs: Wednesday
+            Console.WriteLine(typeof(DaysOfWeek)); // Outputs: 
 
             bool isValid = Enum.IsDefined(typeof(DaysOfWeek), 3);
             Console.WriteLine(isValid); // Outputs: True
