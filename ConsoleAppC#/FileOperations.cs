@@ -83,4 +83,67 @@ internal class FileOperations
 
         Console.WriteLine($"CSV file created at: {filePath}");
     }
+
+    public static void StreamReaderTest()
+    {
+        string filePath = "C:\\data.csv";
+        using (StreamReader reader = new StreamReader(filePath, Encoding.UTF8))
+        {
+            string line;
+            while ((line = reader.ReadLine()) != null)
+            {
+                Console.WriteLine(line);
+            }
+        }
+    }
+
+    public static void FileStreamWriteTest()
+    {
+        string path = "C:\\example.txt";
+        byte[] data = System.Text.Encoding.UTF8.GetBytes("Hello, FileStream!");
+
+        using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write))
+        {
+            fs.Write(data, 0, data.Length);
+        }
+
+        Console.WriteLine("Data written to file.");
+    }
+
+    public static void FileStreamReadTest()
+    {
+        string path = "C:\\example.txt";
+        byte[] buffer = new byte[10]; // Adjust buffer size as needed
+
+        using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read))
+        {
+            int bytesRead = fs.Read(buffer, 0, buffer.Length);
+            string readData = System.Text.Encoding.UTF8.GetString(buffer, 0, bytesRead);
+            Console.WriteLine("Data read from file: " + readData);
+        }
+    }
+    
+    public static Task SeekTest()
+    {
+        string path = "example.txt";
+        byte[] data = System.Text.Encoding.UTF8.GetBytes("Hello, FileStream!");
+
+        // Writing to the file
+        using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write))
+        {
+            fs.Write(data, 0, data.Length);
+            fs.Flush();
+        }
+
+        // Reading from the file
+        using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read))
+        {
+            byte[] buffer = new byte[data.Length];
+            fs.Seek(0, SeekOrigin.Begin);
+            int bytesRead = fs.Read(buffer, 0, buffer.Length);
+            string readData = System.Text.Encoding.UTF8.GetString(buffer, 0, bytesRead);
+            Console.WriteLine("Data read from file: " + readData);
+        }
+        return Task.CompletedTask;
+    }
 }
