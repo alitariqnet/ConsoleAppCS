@@ -146,4 +146,34 @@ internal class FileOperations
         }
         return Task.CompletedTask;
     }
+
+    public static void BinaryReadWriteTest()
+    {
+        // Create a file to write to
+        using (FileStream fs = new FileStream("C:\\example.dat", FileMode.Create))
+        {
+            using (BinaryWriter writer = new BinaryWriter(fs))
+            {
+                // Write some data
+                writer.Write(42); // Integer
+                writer.Write(3.14); // Double
+                writer.Write("Hello, World!"); // String
+            }
+        }
+
+        // Read the data back
+        using (FileStream fs = new FileStream("C:\\example.dat", FileMode.Open))
+        {
+            using (BinaryReader reader = new BinaryReader(fs))
+            {
+                int intValue = reader.ReadInt32();
+                double doubleValue = reader.ReadDouble();
+                string stringValue = reader.ReadString();
+
+                Console.WriteLine($"Integer: {intValue}");
+                Console.WriteLine($"Double: {doubleValue}");
+                Console.WriteLine($"String: {stringValue}");
+            }
+        }
+    }
 }
