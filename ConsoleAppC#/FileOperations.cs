@@ -176,4 +176,34 @@ internal class FileOperations
             }
         }
     }
+
+    public static void BinaryReadWriteEncodingTest()
+    {
+        // Create a file to write to
+        using (FileStream fs = new FileStream("C:\\example-encoding.dat", FileMode.Create))
+        {
+            using (BinaryWriter writer = new BinaryWriter(fs, Encoding.UTF8))
+            {
+                // Write some data with UTF-8 encoding
+                writer.Write(42); // Integer
+                writer.Write(3.14); // Double
+                writer.Write("Hello, World!"); // String
+            }
+        }
+
+        // Read the data back
+        using (FileStream fs = new FileStream("C:\\example-encoding.dat", FileMode.Open))
+        {
+            using (BinaryReader reader = new BinaryReader(fs, Encoding.UTF8))
+            {
+                int intValue = reader.ReadInt32();
+                double doubleValue = reader.ReadDouble();
+                string stringValue = reader.ReadString();
+
+                Console.WriteLine($"Integer: {intValue}");
+                Console.WriteLine($"Double: {doubleValue}");
+                Console.WriteLine($"String: {stringValue}");
+            }
+        }
+    }
 }
