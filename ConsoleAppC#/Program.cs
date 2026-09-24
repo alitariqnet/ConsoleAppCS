@@ -45,7 +45,15 @@ internal class Program
 
         //LINQquery.Test();
 
-        ExecutionOfAnIterator();
+        //ExecutionOfAnIterator();
+
+        //YieldTest();
+
+        //YieldAsyncTest();
+
+        //YieldShield.Test();
+
+        
 
         Console.WriteLine("==============");
     }
@@ -60,7 +68,6 @@ internal class Program
         Console.WriteLine("Caller: about to iterate.");
         foreach (int i in numbers)
         {
-            Console.WriteLine($"foreach loop runs");
             Console.WriteLine($"Caller: {i}");
         }
 
@@ -69,8 +76,6 @@ internal class Program
             Console.WriteLine("Iterator: start.");
             for (int i = 0; i <= upto; i += 2)
             {
-                Console.WriteLine($"for loop runs");
-
                 Console.WriteLine($"Iterator: about to yield {i}");
                 yield return i;
                 Console.WriteLine($"Iterator: yielded {i}");
@@ -93,26 +98,69 @@ internal class Program
     }
 
     public static void YieldTest() 
-    
-    
-   { 
-    
+    {
+        Console.WriteLine(string.Join(" ", TakeWhilePositive(new int[] { 2, 3, 4, 5, -1, 3, 4 })));
+        // Output: 2 3 4 5
+
+        Console.WriteLine(string.Join(" ", TakeWhilePositive(new int[] { 9, 8, 7 })));
+        // Output: 9 8 7
+
+
+        static IEnumerable<int> TakeWhilePositive(IEnumerable<int> numbers)
+        {
+            foreach (int n in numbers)
+            {
+                if (n > 0)
+                {
+                    yield return n;
+                }
+                else
+                {
+                    yield break;
+                }
+            }
+        }
+    }
+
+
+    public static async void YieldAsyncTest() 
+    {
+        await foreach (int n in GenerateNumbersAsync(5))
+        {
+            Console.Write(n);
+            Console.Write(" ");
+        }
+        // Output: 0 2 4 6 8
+
+        async IAsyncEnumerable<int> GenerateNumbersAsync(int count)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                yield return await ProduceNumberAsync(i);
+            }
+        }
+
+        async Task<int> ProduceNumberAsync(int seed)
+        {
+            await Task.Delay(1000);
+            return 2 * seed;
+        }
     }
 
     static void HumanizeQuantities()
-{
-Console.WriteLine("case".ToQuantity(0));
-Console.WriteLine("case".ToQuantity(1));
-Console.WriteLine("case".ToQuantity(5));
-}
+    {
+    Console.WriteLine("case".ToQuantity(0));
+    Console.WriteLine("case".ToQuantity(1));
+    Console.WriteLine("case".ToQuantity(5));
+    }
 
-static void HumanizeDates()
-{
-Console.WriteLine(DateTime.UtcNow.AddHours(-24).Humanize());
-Console.WriteLine(DateTime.UtcNow.AddHours(-2).Humanize());
-Console.WriteLine(TimeSpan.FromDays(1).Humanize());
-Console.WriteLine(TimeSpan.FromDays(16).Humanize());
-}
+    static void HumanizeDates()
+    {
+    Console.WriteLine(DateTime.UtcNow.AddHours(-24).Humanize());
+    Console.WriteLine(DateTime.UtcNow.AddHours(-2).Humanize());
+    Console.WriteLine(TimeSpan.FromDays(1).Humanize());
+    Console.WriteLine(TimeSpan.FromDays(16).Humanize());
+    }
 
     int multiplier(int x, int y)
     {

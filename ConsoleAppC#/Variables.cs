@@ -25,11 +25,11 @@ public class Variables
     public class A
     {
         public static int x;
-        int y;
+        //int y;
 
         public static void F(int[] v, int a, ref int b, out int c, in int d)
         {
-            int i = 1;
+            //int i = 1;
             c = a + b++ + d;
         }
 
