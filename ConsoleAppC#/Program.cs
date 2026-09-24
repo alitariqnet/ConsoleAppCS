@@ -55,7 +55,9 @@ internal class Program
 
         //Nullifiers.Test();
 
-        RefType.Test();
+        //RefType.Test();
+
+        DerivedClass.Test();
 
         Console.WriteLine("==============");
     }
