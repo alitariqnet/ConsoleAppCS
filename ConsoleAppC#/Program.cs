@@ -53,7 +53,9 @@ internal class Program
 
         //YieldShield.Test();
 
-        Nullifiers.Test();
+        //Nullifiers.Test();
+
+        RefType.Test();
 
         Console.WriteLine("==============");
     }
