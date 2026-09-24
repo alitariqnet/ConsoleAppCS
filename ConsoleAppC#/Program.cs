@@ -53,7 +53,7 @@ internal class Program
 
         //YieldShield.Test();
 
-        
+        Nullifiers.Test();
 
         Console.WriteLine("==============");
     }
@@ -254,10 +254,14 @@ public class App
         }
 
         // Add the file contents to a generic list of strings.
-        List<string> fileContents = new List<string>();
+        List<string> fileContents = [];
         while (!sr.EndOfStream)
         {
-            fileContents.Add(sr.ReadLine());
+            string? ReadLine = sr.ReadLine();
+            if (ReadLine != null)
+            {
+                fileContents.Add(ReadLine);
+            }
         }
 
         // Check for the string.
@@ -314,7 +318,7 @@ public class StreamReaderEnumerator : IEnumerator<string>
         _sr = new StreamReader(filePath);
     }
 
-    private string _current;
+    private string? _current;
     // Implement the IEnumerator(T).Current publicly, but implement
     // IEnumerator.Current, which is also required, privately.
     public string Current

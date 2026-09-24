@@ -53,8 +53,8 @@ internal class FileOperations
             // Read the text from the file
             string text = File.ReadAllText(filePath);
             Console.WriteLine(text);
-            string lines = File.ReadAllLines(filePath).ToString();
-            Console.WriteLine(lines.ToString());
+            string? lines = File.ReadAllLines(filePath).ToString();
+            Console.WriteLine(lines?.ToString());
             string attributes = File.GetAttributes(filePath).ToString();
             Console.WriteLine($"File attributes: {attributes}");
         }
@@ -89,7 +89,7 @@ internal class FileOperations
         string filePath = "C:\\data.csv";
         using (StreamReader reader = new StreamReader(filePath, Encoding.UTF8))
         {
-            string line;
+            string? line;
             while ((line = reader.ReadLine()) != null)
             {
                 Console.WriteLine(line);

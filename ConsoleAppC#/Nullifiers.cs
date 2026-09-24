@@ -11,8 +11,21 @@ namespace ConsoleAppCS
     {
         public static void Test()
         {
-            string str = null;
-            Console.WriteLine(str);
+            // Accessing a member on null throws NullReferenceException at runtime:
+            // string? name = null;
+            // int length = name.Length; // throws NullReferenceException
+
+            // Check before you dereference:
+            string? name = null;
+            if (name is not null)
+            {
+                Console.WriteLine($"Name has {name.Length} characters.");
+            }
+            else
+            {
+                Console.WriteLine("Name has no value.");
+            }
+            // Output: Name has no value.
         }
     }
 }
