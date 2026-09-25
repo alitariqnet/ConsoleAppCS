@@ -65,7 +65,9 @@ internal class Program
         //await HttpClientAsync.Test();
         //Console.WriteLine("After calling Test method of HttpClientAsync class");
 
-        DataParallelism.Test();
+        //DataParallelism.Test();
+
+        SwitchCondition.Test();
 
         Console.WriteLine("==============");
     }
