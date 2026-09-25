@@ -60,9 +60,12 @@ internal class Program
         //DerivedClass.Test();
 
         //AccountHelper.Test();
-        Console.WriteLine("Before calling Test method of HttpClientAsync class");
-        await HttpClientAsync.Test();
-        Console.WriteLine("After calling Test method of HttpClientAsync class");
+
+        //Console.WriteLine("Before calling Test method of HttpClientAsync class");
+        //await HttpClientAsync.Test();
+        //Console.WriteLine("After calling Test method of HttpClientAsync class");
+
+        DataParallelism.Test();
 
         Console.WriteLine("==============");
     }
