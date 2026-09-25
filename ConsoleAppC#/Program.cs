@@ -57,7 +57,9 @@ internal class Program
 
         //RefType.Test();
 
-        DerivedClass.Test();
+        //DerivedClass.Test();
+
+        AccountHelper.Test();
 
         Console.WriteLine("==============");
     }
