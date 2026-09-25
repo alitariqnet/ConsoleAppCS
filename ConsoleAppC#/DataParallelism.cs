@@ -1,10 +1,5 @@
-﻿using System;
+﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static ConsoleAppCS.Variables;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ConsoleAppCS;
 
@@ -25,6 +20,8 @@ internal class DataParallelism
 
         // Parallel equivalent
         Parallel.ForEach(list, item => Process(item));
+
+        ConcurrentBagTest();
     }
 
     static void Process(int item)
@@ -34,11 +31,25 @@ internal class DataParallelism
         //Following are two outputs of two different runs:
         //1 2 3 4 5 6 7 8 9
         //3 9 6 8 5 7 1 42 ============== // see it is not 42 it is 4 and 2 but space was not printed after 4
-        //PS E:\Projects\ConsoleAppCS\ConsoleAppC#> dotnet run
-        //==============
+        //
         //1 2 3 4 5 6 7 8 9
         //6 7 1 5 3 2 8 9 4 ==============
     }
 
-
+    static void ConcurrentBagTest()
+    {
+        var results = new ConcurrentBag<int>();
+        Parallel.For(0, 1000, i =>
+        {
+            // Simulate some work
+            Task.Delay(10).Wait();
+            results.Add(i);
+        });
+        //Parallel.ForEach(results, item => Process(item));
+        foreach (int item in results)
+        {
+            Process(item);
+        }
+        Console.WriteLine($"Processed {results.Count} items in parallel.");
+    }
 }
