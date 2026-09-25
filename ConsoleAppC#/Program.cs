@@ -67,7 +67,9 @@ internal class Program
 
         //DataParallelism.Test();
 
-        SwitchCondition.Test();
+        //SwitchCondition.Test();
+
+        EqualityCheck.Test();
 
         Console.WriteLine("==============");
     }
