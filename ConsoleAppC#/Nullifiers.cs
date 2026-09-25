@@ -40,7 +40,7 @@ namespace ConsoleAppCS
             display = nonNullName.ToUpper();    // safe: nonNullName is never null
             Console.WriteLine(display);         // ALICE
 
-            string? city = GetCity();
+            string? city = GetCity() ?? null;
 
             // ?. — access a member only when non-null
             int? len = city?.Length;

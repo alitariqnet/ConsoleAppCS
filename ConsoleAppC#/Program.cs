@@ -11,7 +11,7 @@ namespace ConsoleAppCS;
 
 internal class Program
 {
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
         Console.WriteLine("==============");
         //CollectionsPractice collectionsPractice = new CollectionsPractice();
@@ -59,7 +59,10 @@ internal class Program
 
         //DerivedClass.Test();
 
-        AccountHelper.Test();
+        //AccountHelper.Test();
+        Console.WriteLine("Before calling Test method of HttpClientAsync class");
+        await HttpClientAsync.Test();
+        Console.WriteLine("After calling Test method of HttpClientAsync class");
 
         Console.WriteLine("==============");
     }
