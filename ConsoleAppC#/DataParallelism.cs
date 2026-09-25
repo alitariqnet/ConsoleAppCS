@@ -8,20 +8,22 @@ internal class DataParallelism
 {
     public static void Test() 
     {
-        List<int> list = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        //List<int> list = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
         // Sequential version
-        foreach (int item in list)
-        {
-            Process(item);
-        }
-        Console.WriteLine();
+        //foreach (int item in list)
+        //{
+        //    Process(item);
+        //}
+        //Console.WriteLine();
         // Expected output:
 
         // Parallel equivalent
-        Parallel.ForEach(list, item => Process(item));
+        //Parallel.ForEach(list, item => Process(item));
 
-        ConcurrentBagTest();
+        //ConcurrentBagTest();
+
+        WhenAllTest();
     }
 
     static void Process(int item)
@@ -51,5 +53,37 @@ internal class DataParallelism
             Process(item);
         }
         Console.WriteLine($"Processed {results.Count} items in parallel.");
+    }
+
+    static async Task WhenAllTest()
+    {
+        var urls = new List<string>
+        {
+            "https://example.com",
+            "https://example.org",
+            "https://example.net"
+        };
+
+        var tasks = new List<Task<string>>();
+
+        foreach (var url in urls)
+        {
+            tasks.Add(FetchDataAsync(url));
+        }
+
+        // Wait for all tasks to complete
+        var results = await Task.WhenAll(tasks);
+
+        foreach (var result in results)
+        {
+            Console.WriteLine(result);
+        }
+    }
+    static async Task<string> FetchDataAsync(string url)
+    {
+        using (var client = new HttpClient())
+        {
+            return await client.GetStringAsync(url);
+        }
     }
 }
