@@ -69,7 +69,9 @@ internal class Program
 
         //SwitchCondition.Test();
 
-        EqualityCheck.Test();
+        //EqualityCheck.Test();
+
+        InAndOutKeywords.Test();
 
         Console.WriteLine("==============");
     }
