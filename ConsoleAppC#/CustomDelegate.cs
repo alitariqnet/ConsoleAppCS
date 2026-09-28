@@ -14,7 +14,8 @@ internal class CustomDelegate
     {
         CustomDelegate TestCustomDelegate = new();
         PerformCalculation pc = TestCustomDelegate.PerformCalc;
-        pc(1, 2);
+        int result = pc(1, 2);
+        Console.WriteLine(result);
     }
 
     int PerformCalc(int x, int y)

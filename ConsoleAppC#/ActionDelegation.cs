@@ -8,11 +8,11 @@ namespace ConsoleAppCS;
 
 internal class ActionDelegation
 {
-    Action<string> messageTarget;
 
-    messageTarget = Console.WriteLine;
+    readonly Action<string> messageTarget;
 
-    messageTarget("Hello, World!");
+    //messageTarget = Console.WriteLine;
+    //messageTarget("Hello, World!");
 
     
 }

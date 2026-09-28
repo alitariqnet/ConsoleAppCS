@@ -71,7 +71,9 @@ internal class Program
 
         //EqualityCheck.Test();
 
-        InAndOutKeywords.Test();
+        //InAndOutKeywords.Test();
+
+        CustomDelegate.Test();
 
         Console.WriteLine("==============");
     }
