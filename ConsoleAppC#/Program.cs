@@ -73,7 +73,9 @@ internal class Program
 
         //InAndOutKeywords.Test();
 
-        CustomDelegate.Test();
+        //CustomDelegate.Test();
+
+        ActionDelegate.Test();
 
         Console.WriteLine("==============");
     }
